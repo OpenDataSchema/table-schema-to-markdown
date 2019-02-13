@@ -1,0 +1,25 @@
+{
+  "fr": {
+    "type": {
+      "array": "liste",
+      "boolean": "booléen",
+      "date": "date",
+      "datetime": "date et heure",
+      "duration": "durée",
+      "geopoint": "point géographique",
+      "integer": "nombre entier",
+      "number": "nombre réel",
+      "object": "objet",
+      "string": "chaîne de caractères",
+      "time": "heure",
+      "year": "année",
+      "year-month": "année et mois"
+    },
+    "format": {
+      "email": "adresse de courriel",
+      "uri": "adresse URL",
+      "binary": "données binaires encodées en base64",
+      "uuid": "identifiant unique UUID"
+    }
+  }
+}

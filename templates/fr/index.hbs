@@ -1,0 +1,21 @@
+# {{{title}}}
+
+{{{description}}}
+
+## Version {{version}}
+
+- Auteur : {{{author}}}
+- Contributeurs : {{{contributor}}}
+- Schéma créé le : {{formatDate created}}
+- Schéma mis à jour le : {{formatDate updated}}
+- Site web : {{{homepage}}}
+{{#if missing_values}}
+- Valeurs manquantes : {{join missing_values}}
+{{/if}}
+
+## Modèle de données
+
+Ce modèle de données repose sur les {{formatNumber fields.length}} champs suivants correspondant aux colonnes du fichier
+tabulaire.
+
+{{> fieldsAsTitles }}

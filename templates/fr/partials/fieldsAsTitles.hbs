@@ -1,0 +1,55 @@
+{{#each fields}}
+### `{{{name}}}`
+
+- Titre : {{{title}}}
+- Description : {{{description}}}
+- Type : {{formatMessage type}}{{#isnt format "default"}} ({{format}}){{/isnt}}
+{{#if decimalChar}}
+- Séparateur décimal : {{decimalChar}}
+{{/if}}
+{{#if groupChar}}
+- Séparateur de groupes de chiffres : {{groupChar}}
+{{/if}}
+{{#if trueValues}}
+- Valeurs considérées comme vraies : {{join trueValues}}
+{{/if}}
+{{#if falseValues}}
+- Valeurs considérées comme fausses : {{join falseValues}}
+{{/if}}
+{{#if bareNumber}}
+- Le nombre peut contenir des caractères supplémentaires (« € », « % » ...)
+{{/if}}
+{{#if rdfType}}
+- Type RDF : {{rdfType}}
+{{/if}}
+{{#if example}}
+- Exemple : "{{example}}"
+{{/if}}
+{{#if constraints.required}}
+- Valeur obligatoire
+{{else}}
+- Valeur optionnelle
+{{/if}}
+{{#if constraints.unique}}
+- Valeur unique
+{{/if}}
+{{#if constraints.minLength}}
+- Taille minimale : {{formatNumber constraints.minLength}}
+{{/if}}
+{{#if constraints.maxLength}}
+- Taille maximale : {{formatNumber constraints.maxLength}}
+{{/if}}
+{{#if constraints.minimum}}
+- Valeur minimale : {{formatNumber constraints.minimum}}
+{{/if}}
+{{#if constraints.maximum}}
+- Valeur maximale : {{formatNumber constraints.maximum}}
+{{/if}}
+{{#if constraints.pattern}}
+- Motif : {{constraints.pattern}}
+{{/if}}
+{{#if constraints.enum}}
+- Valeurs autorisées : {{join (map constraints.enum quote)}}
+{{/if}}
+
+{{/each}}

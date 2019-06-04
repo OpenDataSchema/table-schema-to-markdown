@@ -18,9 +18,13 @@
 
 {{> propertyListItemIfValue name=(intlGet "schemaProperties.keywords") value=(join keywords (intlGet "separators.inlineEnumeration")) ~}}
 
-{{> propertyListItemIfValue name=(intlGet "schemaProperties.created") value=(formatDate created) ~}}
+{{#if created}}
+- {{> property name=(intlGet "schemaProperties.created") value=(formatDate created)}}
+{{/if ~}}
 
-{{> propertyListItemIfValue name=(intlGet "schemaProperties.lastModified") value=(formatDate lastModified) ~}}
+{{#if lastModified}}
+- {{> property name=(intlGet "schemaProperties.lastModified") value=(formatDate lastModified)}}
+{{/if ~}}
 
 {{> propertyListItemIfValue name=(intlGet "schemaProperties.countryCode") value=countryCode ~}}
 

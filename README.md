@@ -2,10 +2,12 @@
 
 Generate Markdown documentation from a [table schema](https://frictionlessdata.io/specs/table-schema/) JSON file.
 
-## Dependencies
+Note: For now table schemas specification doesn't define metadata properties. This project is based on [this proposal](https://github.com/frictionlessdata/specs/pull/630).
+
+## Install
 
 ```bash
-npm install
+npm install -g table-schema-to-markdown
 ```
 
 ## Usage
@@ -13,11 +15,25 @@ npm install
 Given a table schema named `schema.json` (e.g. [this one](https://git.opendatafrance.net/scdl/subventions/blob/master/schema.json)):
 
 ```bash
-node index.js /path/to/schema.json
-LANG=fr node index.js /path/to/schema.json
-LANG=fr node index.js --template template.hbs /path/to/schema.json
+table-schema-to-markdown <schema.json>
+LC_ALL=fr table-schema-to-markdown <schema.json>
+LC_ALL=fr table-schema-to-markdown --template <template.hbs> <schema.json>
 ```
 
-## Custom templates
+## Development
 
-- see templates/fr/partials/fieldsAsTable.hbs
+Install project with its dependencies:
+
+```bash
+git clone https://framagit.org/opendataschema.org/table-schema-to-markdown.git
+cd table-schema-to-markdown
+npm install
+```
+
+Use it:
+
+```bash
+node src/index.js <schema.json>
+LC_ALL=fr node src/index.js <schema.json>
+LC_ALL=fr node src/index.js --template <template.hbs> <schema.json>
+```

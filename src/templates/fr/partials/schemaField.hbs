@@ -1,0 +1,97 @@
+### `{{name}}`
+
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.title")
+      value=title
+  }}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.description")
+      value=description
+  }}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.type")
+      value=(formatMessage type)
+  }}}{{#isnt format "default"}} ({{format}}){{/isnt}}
+{{#if decimalChar}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.decimalChar")
+      value=decimalChar
+  }}}
+{{/if}}
+{{#if groupChar}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.groupChar")
+      value=groupChar
+  }}}
+{{/if}}
+{{#if trueValues}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.trueValues")
+      value=(join trueValues (intlGet "separators.inlineEnumeration"))
+  }}}
+{{/if}}
+{{#if falseValues}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.falseValues")
+      value=(join falseValues (intlGet "separators.inlineEnumeration"))
+  }}}
+{{/if}}
+{{#if bareNumber}}
+- {{{intlGet "fieldProperties.bareNumber"}}}
+{{/if}}
+{{#if rdfType}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.rdfType")
+      value=rdfType
+  }}}
+{{/if}}
+{{#if example}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.example")
+      value=(formatMarkdownCode example)
+  }}}
+{{/if}}
+{{#if constraints.required}}
+- {{{intlGet "fieldProperties.constraints.required"}}}
+{{else}}
+- {{{intlGet "fieldProperties.constraints.notRequired"}}}
+{{/if}}
+{{#if constraints.unique}}
+- {{{intlGet "fieldProperties.constraints.unique"}}}
+{{/if}}
+{{#if constraints.minLength}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.constraints.minLength")
+      value=(formatNumber constraints.minLength)
+  }}}
+{{/if}}
+{{#if constraints.maxLength}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.constraints.maxLength")
+      value=(formatNumber constraints.maxLength)
+  }}}
+{{/if}}
+{{#if constraints.minimum}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.constraints.minimum")
+      value=(formatNumber constraints.minimum)
+  }}}
+{{/if}}
+{{#if constraints.maximum}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.constraints.maximum")
+      value=(formatNumber constraints.maximum)
+  }}}
+{{/if}}
+{{#if constraints.pattern}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.constraints.pattern")
+      value=constraints.pattern
+  }}}
+{{/if}}
+{{#if constraints.enum}}
+- {{{formatMessage (intlGet "messages.definitionList.keyValue")
+      key=(intlGet "fieldProperties.constraints.enum")
+      value=(formatMarkdownCode (JSONstringify constraints.enum))
+  }}}
+{{/if}}

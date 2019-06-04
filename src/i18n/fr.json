@@ -1,0 +1,79 @@
+{
+  "fieldProperties": {
+    "bareNumber": "le nombre peut contenir des caractères supplémentaires (e.g. « € », « % » ...)",
+    "constraints": {
+      "enum": "valeurs autorisées",
+      "maximum": "valeur maximale",
+      "maxLength": "taille maximale",
+      "minimum": "valeur minimale",
+      "minLength": "taille minimale",
+      "notRequired": "valeur optionnelle",
+      "pattern": "motif",
+      "required": "valeur obligatoire",
+      "unique": "valeur unique"
+    },
+    "contributors": {
+      "role": {
+        "author": "auteur",
+        "contributor": "contributeur"
+      }
+    },
+    "decimalChar": "séparateur décimal",
+    "description": "description",
+    "example": "exemple",
+    "falseValues": "valeurs considérées comme fausses",
+    "groupChar": "séparateur de groupes de chiffres",
+    "rdfType": "type RDF",
+    "title": "titre",
+    "trueValues": "valeurs considérées comme vraies",
+    "type": "type"
+  },
+  "format": {
+    "email": "adresse de courriel",
+    "uri": "URI",
+    "binary": "données binaires encodées en base64",
+    "uuid": "identifiant unique UUID"
+  },
+  "messages": {
+    "definitionList": {
+      "key": "{key} :",
+      "keyValue": "{key} : {value}"
+    },
+    "link": "lien",
+    "schemaImageAlt": "Image du schéma",
+    "unknownRole": "rôle inconnu"
+  },
+  "schemaProperties": {
+    "contributors": "contributeurs",
+    "created": "date de création",
+    "countryCode": "concerne le pays",
+    "homepage": "page d'accueil",
+    "keywords": "mots clés",
+    "lastModified": "date de dernière mise à jour",
+    "licenses": "licences",
+    "missingValues": "valeurs manquantes représentées par",
+    "name": "nom",
+    "path": "URL du schéma",
+    "resources": "ressources",
+    "sources": "sources",
+    "version": "version"
+  },
+  "separators": {
+    "inlineEnumeration": ", "
+  },
+  "type": {
+    "array": "liste",
+    "boolean": "booléen",
+    "date": "date",
+    "datetime": "date et heure",
+    "duration": "durée",
+    "geopoint": "point géographique",
+    "integer": "nombre entier",
+    "number": "nombre réel",
+    "object": "objet",
+    "string": "chaîne de caractères",
+    "time": "heure",
+    "year": "année",
+    "year-month": "année et mois"
+  }
+}

@@ -1,0 +1,9 @@
+deploy_to_npm:
+  image: node:10
+  stage: deploy
+  before_script:
+    - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+  script:
+    - npm publish --access public
+  only:
+    - tags

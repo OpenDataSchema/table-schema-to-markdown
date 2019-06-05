@@ -6,6 +6,9 @@
   "bin": {
     "table-schema-to-markdown": "./src/index.js"
   },
+  "scripts": {
+    "postversion": "git push --follow-tags"
+  },
   "repository": {
     "type": "git",
     "url": "https://framagit.org/opendataschema.org/table-schema-to-markdown.git"

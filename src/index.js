@@ -5,7 +5,7 @@ const path = require("path")
 const areIntlLocalesSupported = require("intl-locales-supported")
 const handlebars = require("handlebars")
 const osLocale = require("os-locale")
-const { Schema } = require("tableschema")
+const tableSchema = require("tableschema")
 
 function isDir(dirPath) {
   return fs.existsSync(dirPath) && fs.lstatSync(dirPath).isDirectory()
@@ -36,18 +36,26 @@ setupIntlPolyfill(locales)
 async function main() {
   const doc = `
 Usage:
-  table-schema-to-markdown <schema_path> [--template=<path>] [--partials=<path>]
+  table-schema-to-markdown <schema_file_or_url> [--template=<file>] [--partials=<dir>]
   table-schema-to-markdown -h | --help | --version
 `
   const { docopt } = require("docopt")
   const { version } = require("../package.json")
   const options = docopt(doc, { version })
 
-  const schemaFilePath = path.resolve(options["<schema_path>"])
   const defaultTemplateFilePath = path.resolve(__dirname, "templates", "index.hbs")
   const templateFilePath = options["--template"] ? path.resolve(options["--template"]) : defaultTemplateFilePath
 
-  const schema = await Schema.load(schemaFilePath, { strict: true })
+  let schema
+  try {
+    schema = await tableSchema.Schema.load(options["<schema_file_or_url>"], { strict: true })
+  } catch (exception) {
+    if (exception instanceof tableSchema.errors.TableSchemaError) {
+      console.error("Could not load schema:", exception.message)
+      return
+    }
+    throw exception
+  }
 
   // PARTIALS
 

@@ -7,7 +7,7 @@ Note: For now table schemas specification doesn't define metadata properties. Th
 ## Install
 
 ```bash
-npm install -g table-schema-to-markdown
+npm install -g @opendataschema/table-schema-to-markdown
 ```
 
 ## Usage

@@ -15,7 +15,10 @@
     "contributors": {
       "role": {
         "author": "auteur",
-        "contributor": "contributeur"
+        "contributor": "contributeur",
+        "maintainer": "mainteneur",
+        "publisher": "éditeur",
+        "wrangler": "bricoleur"
       }
     },
     "decimalChar": "séparateur décimal",
@@ -40,7 +43,7 @@
       "keyValue": "{key} : {value}"
     },
     "link": "lien",
-    "schemaImageAlt": "Image du schéma",
+    "schemaImageAlt": "image du schéma",
     "unknownRole": "rôle inconnu"
   },
   "schemaProperties": {
@@ -49,7 +52,7 @@
     "countryCode": "concerne le pays",
     "homepage": "page d'accueil",
     "keywords": "mots clés",
-    "lastModified": "date de dernière mise à jour",
+    "lastModified": "date de dernière modification",
     "licenses": "licences",
     "missingValues": "valeurs manquantes représentées par",
     "name": "nom",

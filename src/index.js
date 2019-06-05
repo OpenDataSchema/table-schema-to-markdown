@@ -2,7 +2,6 @@
 
 const fs = require("fs")
 const path = require("path")
-const argv = require("minimist")(process.argv.slice(2))
 const areIntlLocalesSupported = require("intl-locales-supported")
 const handlebars = require("handlebars")
 const osLocale = require("os-locale")
@@ -35,11 +34,18 @@ const locales = [locale]
 setupIntlPolyfill(locales)
 
 async function main() {
-  // Process file arguments.
+  const doc = `
+Usage:
+  table-schema-to-markdown <schema_path> [--template=<path>] [--partials=<path>]
+  table-schema-to-markdown -h | --help | --version
+`
+  const { docopt } = require("docopt")
+  const { version } = require("../package.json")
+  const options = docopt(doc, { version })
 
-  const schemaFilePath = path.resolve(argv._[0])
-  const defaultTemplateFilePath = path.resolve(__dirname, "templates", "fr", "index.hbs")
-  const templateFilePath = argv.template ? path.resolve(argv.template) : defaultTemplateFilePath
+  const schemaFilePath = path.resolve(options["<schema_path>"])
+  const defaultTemplateFilePath = path.resolve(__dirname, "templates", "index.hbs")
+  const templateFilePath = options["--template"] ? path.resolve(options["--template"]) : defaultTemplateFilePath
 
   const schema = await Schema.load(schemaFilePath, { strict: true })
 
@@ -57,14 +63,8 @@ async function main() {
   if (isDir(defaultPartialsDir)) {
     registerPartials(defaultPartialsDir)
   }
-  if (argv.template) {
-    const templatePartialsDir = path.resolve(templateFilePath, "..", "partials")
-    if (isDir(templatePartialsDir)) {
-      registerPartials(templatePartialsDir)
-    }
-  }
-  if (argv.partials) {
-    registerPartials(argv.partials)
+  if (options["--partials"]) {
+    registerPartials(options["--partials"])
   }
 
   // HELPERS
@@ -83,7 +83,20 @@ async function main() {
   const templateSource = fs.readFileSync(templateFilePath, "utf8")
   const template = handlebars.compile(templateSource)
 
-  const i18n = require(`./i18n/${locale}.json`)
+  const baseLocale = locale.split("-")[0]
+  const localeJsonFilePath = path.resolve(__dirname, "i18n", `${baseLocale}.json`)
+  if (!fs.existsSync(localeJsonFilePath)) {
+    const supportedLocales = fs
+      .readdirSync(path.resolve(__dirname, "i18n"))
+      .map(fileName => path.basename(fileName, ".json"))
+    console.error(
+      `No translated messages exist for your locale "${locale}". Supported locales: ${supportedLocales.join(
+        ", "
+      )}. Pass LC_ALL environment variable to use another locale.`
+    )
+    return
+  }
+  const i18n = require(localeJsonFilePath)
   const intlData = { locales, ...i18n }
 
   const output = template(schema.descriptor, { data: { intl: intlData } })

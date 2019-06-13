@@ -1,4 +1,4 @@
-deploy_to_npm:
+Deploy to npm:
   image: node:10
   stage: deploy
   before_script:
@@ -7,3 +7,6 @@ deploy_to_npm:
     - npm publish --access public
   only:
     - tags
+  environment:
+    name: npm
+    url: https://www.npmjs.com/package/@opendataschema/table-schema-to-markdown

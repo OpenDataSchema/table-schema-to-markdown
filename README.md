@@ -1,6 +1,6 @@
 # Table Schema to Markdown
 
-![npm](https://img.shields.io/npm/v/@opendataschema/table-schema-to-markdown.svg)
+[![npm](https://img.shields.io/npm/v/@opendataschema/table-schema-to-markdown.svg)](https://www.npmjs.com/package/@opendataschema/table-schema-to-markdown)
 
 Generate Markdown documentation from a [Table Schema](https://frictionlessdata.io/specs/table-schema/) JSON file.
 

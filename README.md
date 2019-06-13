@@ -48,7 +48,7 @@ For [this schema](https://git.opendatafrance.net/scdl/subventions/blob/4696b0ad1
 Install project with its dependencies:
 
 ```bash
-git clone https://framagit.org/opendataschema.org/table-schema-to-markdown.git
+git clone https://framagit.org/opendataschema/table-schema-to-markdown.git
 cd table-schema-to-markdown
 npm install
 ```

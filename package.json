@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://framagit.org/opendataschema.org/table-schema-to-markdown.git"
+    "url": "https://framagit.org/opendataschema/table-schema-to-markdown.git"
   },
   "keywords": [
     "frictionless data",

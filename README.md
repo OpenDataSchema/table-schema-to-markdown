@@ -19,6 +19,12 @@ table-schema-to-markdown schema.json
 table-schema-to-markdown https://git.opendatafrance.net/scdl/subventions/raw/master/schema.json
 ```
 
+By default, fields are rendered as headings, but it is possible to render them as a table:
+
+```bash
+table-schema-to-markdown --fields-format=table schema.json
+```
+
 The program reads your current locale to output translated messages, but it's possible to pass another locale:
 
 ```bash
@@ -30,6 +36,10 @@ Another Handlebars template file or partials directory can be passed also:
 ```bash
 table-schema-to-markdown --template my_template.hbs --partials my_partials_dir schema.json
 ```
+
+## Example
+
+For [this schema](https://git.opendatafrance.net/scdl/subventions/blob/4696b0ad124bf2b73b34534862dace35643d4a9a/schema.json), see [this rendering](https://git.opendatafrance.net/scdl/subventions/blob/4696b0ad124bf2b73b34534862dace35643d4a9a/schema.md).
 
 ## Development
 
@@ -48,3 +58,7 @@ node src/index.js <schema.json>
 LC_ALL=fr node src/index.js <schema.json>
 LC_ALL=fr node src/index.js --template <template.hbs> <schema.json>
 ```
+
+## Other implementations
+
+- https://github.com/AntoineAugusti/table-schema-to-markdown

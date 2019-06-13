@@ -36,12 +36,16 @@ setupIntlPolyfill(locales)
 async function main() {
   const doc = `
 Usage:
-  table-schema-to-markdown <schema_file_or_url> [--template=<file>] [--partials=<dir>]
+  table-schema-to-markdown <schema_file_or_url> [--fields-format=<headings|table>] [--template=<file>] [--partials=<dir>]
   table-schema-to-markdown -h | --help | --version
 `
   const { docopt } = require("docopt")
   const { version } = require("../package.json")
   const options = docopt(doc, { version })
+
+  if (!options["--fields-format"]) {
+    options["--fields-format"] = "headings"
+  }
 
   const defaultTemplateFilePath = path.resolve(__dirname, "templates", "index.hbs")
   const templateFilePath = options["--template"] ? path.resolve(options["--template"]) : defaultTemplateFilePath
@@ -67,12 +71,17 @@ Usage:
       handlebars.registerPartial(partialName, partialSource)
     })
   }
-  const defaultPartialsDir = path.resolve(defaultTemplateFilePath, "..", "partials")
-  if (isDir(defaultPartialsDir)) {
-    registerPartials(defaultPartialsDir)
-  }
+  registerPartials(path.resolve(defaultTemplateFilePath, "..", "partials", "default"))
   if (options["--partials"]) {
     registerPartials(options["--partials"])
+  }
+  if (options["--fields-format"] === "headings") {
+    registerPartials(path.resolve(defaultTemplateFilePath, "..", "partials", "fields-as-headings"))
+  } else if (options["--fields-format"] === "table") {
+    registerPartials(path.resolve(defaultTemplateFilePath, "..", "partials", "fields-as-table"))
+  } else {
+    console.error(`Invalid option value: "--fields-format=${options["--fields-format"]}"`)
+    process.exit(1)
   }
 
   // HELPERS

@@ -26,6 +26,7 @@
     "example": "exemple",
     "falseValues": "valeurs considérées comme fausses",
     "groupChar": "séparateur de groupes de chiffres",
+    "name": "nom",
     "rdfType": "type RDF",
     "title": "titre",
     "trueValues": "valeurs considérées comme vraies",

@@ -26,6 +26,7 @@
     "example": "example",
     "falseValues": "values considered false",
     "groupChar": "digit group separator",
+    "name": "name",
     "rdfType": "RDF type",
     "title": "title",
     "trueValues": "values considered true",

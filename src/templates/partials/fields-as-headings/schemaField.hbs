@@ -10,7 +10,7 @@
   }}}
 - {{{formatMessage (intlGet "messages.definitionList.keyValue")
       key=(intlGet "fieldProperties.type")
-      value=(formatMessage type)
+      value=(intlGet (append "type." type))
   }}}{{#isnt format "default"}} ({{format}}){{/isnt}}
 {{#if decimalChar}}
 - {{{formatMessage (intlGet "messages.definitionList.keyValue")

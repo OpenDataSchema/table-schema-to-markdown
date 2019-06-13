@@ -1,0 +1,8 @@
+`{{name}}`|
+{{~intlGet (append "type." type)}}|
+{{~title}}|
+{{~#if example}}`{{example}}`{{/if}}|
+{{~#if constraints.required}}<p>{{intlGet "fieldProperties.constraints.required"}}</p>{{else}}<p>{{intlGet "fieldProperties.constraints.notRequired"}}</p>{{/if}}
+{{~#if constraints.unique}}<p>{{intlGet "fieldProperties.constraints.unique"}}</p>{{/if}}
+{{~#if constraints.minLength}}<p>{{{formatMessage (intlGet "messages.definitionList.keyValue") key=(intlGet "fieldProperties.constraints.minLength") value=(formatNumber constraints.minLength)}}}</p>{{/if}}
+{{~#if constraints.maxLength}}<p>{{{formatMessage (intlGet "messages.definitionList.keyValue") key=(intlGet "fieldProperties.constraints.maxLength") value=(formatNumber constraints.maxLength)}}}</p>{{/if}}|

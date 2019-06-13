@@ -1,5 +1,7 @@
 # Table Schema to Markdown
 
+![npm](https://img.shields.io/npm/v/@opendataschema/table-schema-to-markdown.svg)
+
 Generate Markdown documentation from a [Table Schema](https://frictionlessdata.io/specs/table-schema/) JSON file.
 
 Note: For now Table Schemas specification doesn't define metadata properties. This project is based on [this proposal](https://github.com/frictionlessdata/specs/pull/630).

@@ -39,6 +39,8 @@
     "uuid": "identifiant unique UUID"
   },
   "messages": {
+    "dataModel": "Modèle de données",
+    "dataModelIntro": "Ce modèle de données repose sur les {count} champs suivants correspondant aux colonnes du fichier tabulaire.",
     "definitionList": {
       "key": "{key} :",
       "keyValue": "{key} : {value}"

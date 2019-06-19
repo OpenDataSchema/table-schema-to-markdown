@@ -86,7 +86,7 @@
 {{#if constraints.pattern}}
 - {{{formatMessage (intlGet "messages.definitionList.keyValue")
       key=(intlGet "fieldProperties.constraints.pattern")
-      value=constraints.pattern
+      value=(formatMarkdownCode constraints.pattern)
   }}}
 {{/if}}
 {{#if constraints.enum}}

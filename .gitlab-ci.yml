@@ -3,6 +3,7 @@ Deploy to npm:
   stage: deploy
   before_script:
     - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+    - npm install
   script:
     - npm publish --unsafe-perm --access public
   only:

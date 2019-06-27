@@ -40,8 +40,8 @@ import fr from "./i18n/fr.json"
 
 const locales = { en, fr }
 
-export async function toMarkdown({ descriptor, locale }) {
-  const schema = await tableSchema.Schema.load(descriptor, { strict: true })
+export async function toMarkdown(schemaJson, { locale }) {
+  const schema = await tableSchema.Schema.load(schemaJson, { strict: true })
   const template = handlebars.compile(indexTemplate)
   const intlData = { locales: Object.keys(locales), ...locales[locale] }
   const markdown = template(schema.descriptor, { data: { intl: intlData } })

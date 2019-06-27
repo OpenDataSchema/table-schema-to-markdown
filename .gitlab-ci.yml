@@ -4,7 +4,7 @@ Deploy to npm:
   before_script:
     - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
   script:
-    - npm publish --access public
+    - npm publish --unsafe-perm --access public
   only:
     - tags
   environment:

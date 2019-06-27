@@ -1,12 +1,3 @@
-Build:
-  image: node:10
-  stage: build
-  script:
-    - npm run build
-  artifacts:
-    paths:
-      - dist/
-
 Deploy to npm:
   image: node:10
   stage: deploy

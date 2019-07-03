@@ -1,6 +1,10 @@
 Deploy to npm:
   image: node:10
   stage: deploy
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+    - node_modules/
   before_script:
     - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
     - npm install

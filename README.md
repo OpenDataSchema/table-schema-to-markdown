@@ -61,6 +61,13 @@ LC_ALL=fr node src/cli.js <schema.json>
 LC_ALL=fr node src/cli.js --template <template.hbs> <schema.json>
 ```
 
+## Maintenance
+
+Publish a new version:
+```
+npm version X.Y.Z
+```
+
 ## Other implementations
 
 - https://github.com/AntoineAugusti/table-schema-to-markdown

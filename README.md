@@ -56,9 +56,9 @@ npm install
 Use it:
 
 ```bash
-node src/index.js <schema.json>
-LC_ALL=fr node src/index.js <schema.json>
-LC_ALL=fr node src/index.js --template <template.hbs> <schema.json>
+node src/cli.js <schema.json>
+LC_ALL=fr node src/cli.js <schema.json>
+LC_ALL=fr node src/cli.js --template <template.hbs> <schema.json>
 ```
 
 ## Other implementations

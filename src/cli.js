@@ -2,7 +2,7 @@
 
 const fs = require("fs")
 const path = require("path")
-const areIntlLocalesSupported = require("intl-locales-supported")
+const areIntlLocalesSupported = require("intl-locales-supported").default
 const handlebars = require("handlebars")
 const osLocale = require("os-locale")
 const tableSchema = require("tableschema")

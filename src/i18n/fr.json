@@ -80,6 +80,6 @@
     "string": "chaîne de caractères",
     "time": "heure",
     "year": "année",
-    "year-month": "année et mois"
+    "yearmonth": "année et mois"
   }
 }

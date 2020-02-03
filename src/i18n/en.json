@@ -80,6 +80,6 @@
     "string": "string",
     "time": "time",
     "year": "year",
-    "year-month": "year and month"
+    "yearmonth": "year and month"
   }
 }

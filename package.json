@@ -27,7 +27,7 @@
   "license": "MIT",
   "dependencies": {
     "docopt": "^0.6.2",
-    "handlebars": "^4.1.0",
+    "handlebars": "^4.3.0",
     "handlebars-helpers": "^0.10.0",
     "handlebars-intl": "^1.1.2",
     "intl": "^1.2.5",

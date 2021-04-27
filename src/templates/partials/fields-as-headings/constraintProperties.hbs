@@ -41,6 +41,7 @@
 {{#if constraints.enum}}
 {{ formatIndent arrayItem }}- {{{formatMessage (intlGet "messages.definitionList.keyValue")
                                   key=(intlGet "fieldProperties.constraints.enum")
-                                  value=(formatMarkdownCode (JSONstringify constraints.enum))
+                                  value=(join (formatMarkdownCodeList constraints.enum) (intlGet "separators.inlineEnumeration"))
                               }}}
 {{/if}}
+

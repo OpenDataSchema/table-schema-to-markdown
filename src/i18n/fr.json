@@ -1,5 +1,6 @@
 {
   "fieldProperties": {
+    "arrayItem": "élément de liste",
     "bareNumber": "le nombre peut contenir des caractères supplémentaires (e.g. « € », « % » ...)",
     "constraints": {
       "enum": "valeurs autorisées",

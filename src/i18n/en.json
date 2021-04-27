@@ -1,5 +1,6 @@
 {
   "fieldProperties": {
+    "arrayItem": "array item",
     "bareNumber": "the number can contain extra characters (e.g. « € », « % » ...)",
     "constraints": {
       "enum": "allowed values",

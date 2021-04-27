@@ -5,5 +5,8 @@ module.exports = {
   formatMarkdownLinkOrText: function(text, options) {
     const { href } = options.hash
     return href ? `[${text}](${href})` : text
+  },
+  formatIndent: function(indent) {
+    return indent ? '  ' : ''
   }
 }

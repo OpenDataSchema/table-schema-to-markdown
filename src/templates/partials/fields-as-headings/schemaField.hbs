@@ -13,7 +13,9 @@
       value=(intlGet (append "type." type))
   }}}{{#isnt format "default"}} ({{format}}){{/isnt}}
 {{#if arrayItem}}
-- {{{intlGet "fieldProperties.arrayItem"}}}:
+- {{{formatMessage (intlGet "messages.definitionList.key")
+      key=(intlGet "fieldProperties.arrayItem")
+  }}}
 {{#with arrayItem}}
 {{#if type}}
 {{ formatIndent true }}- {{{formatMessage (intlGet "messages.definitionList.keyValue")

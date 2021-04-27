@@ -43,7 +43,7 @@
     "dataModel": "Data model",
     "dataModelIntro": "This data model relies on the {count} following fields corresponding to the columns of the tabular file.",
     "definitionList": {
-      "key": "{key} :",
+      "key": "{key}:",
       "keyValue": "{key}: {value}"
     },
     "link": "link",

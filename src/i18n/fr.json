@@ -4,6 +4,7 @@
     "bareNumber": "le nombre peut contenir des caractères supplémentaires (e.g. « € », « % » ...)",
     "constraints": {
       "enum": "valeurs autorisées",
+      "label": "contraintes",
       "maximum": "valeur maximale",
       "maxLength": "taille maximale",
       "minimum": "valeur minimale",
@@ -47,6 +48,7 @@
       "keyValue": "{key} : {value}"
     },
     "link": "lien",
+    "na": "s/o",
     "schemaImageAlt": "image du schéma",
     "unknownRole": "rôle inconnu"
   },

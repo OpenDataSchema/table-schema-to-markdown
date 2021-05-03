@@ -4,6 +4,7 @@
     "bareNumber": "the number can contain extra characters (e.g. « € », « % » ...)",
     "constraints": {
       "enum": "allowed values",
+      "label": "constraints",
       "maximum": "maximal value",
       "maxLength": "maximal length",
       "minimum": "minimal value",
@@ -47,6 +48,7 @@
       "keyValue": "{key}: {value}"
     },
     "link": "link",
+    "na": "n/a",
     "schemaImageAlt": "schema image",
     "unknownRole": "unknown role"
   },

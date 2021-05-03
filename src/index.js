@@ -13,7 +13,8 @@ handlebars.registerHelper(helpers)
 
 // PARTIALS
 
-import constraintPropertiesPartial from "./templates/partials/fields-as-headings/constraintProperties.hbs"
+import constraintHeadingPropertiesPartial from "./templates/partials/fields-as-headings/constraintHeadingProperties.hbs"
+import constraintTablePropertiesPartial from "./templates/partials/fields-as-table/constraintTableProperties.hbs"
 import propertiesPartial from "./templates/partials/default/properties.hbs"
 import propertyPartial from "./templates/partials/default/property.hbs"
 import propertyListItemArrayIfValuePartial from "./templates/partials/default/propertyListItemArrayIfValue.hbs"
@@ -22,7 +23,8 @@ import titleNamePathPartial from "./templates/partials/default/titleNamePath.hbs
 import schemaFieldPartial from "./templates/partials/fields-as-headings/schemaField.hbs"
 import schemaFieldsPartial from "./templates/partials/fields-as-headings/schemaFields.hbs"
 
-handlebars.registerPartial("constraintProperties", constraintPropertiesPartial)
+handlebars.registerPartial("constraintHeadingProperties", constraintHeadingPropertiesPartial)
+handlebars.registerPartial("constraintTableProperties", constraintTablePropertiesPartial)
 handlebars.registerPartial("properties", propertiesPartial)
 handlebars.registerPartial("property", propertyPartial)
 handlebars.registerPartial("propertyListItemArrayIfValue", propertyListItemArrayIfValuePartial)

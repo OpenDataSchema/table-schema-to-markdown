@@ -2,7 +2,7 @@
 {{~intlGet (append "type." type)}}|
 {{~title}}|
 {{~#if example}}`{{example}}`{{/if}}|{{"\n"~}}
-{{~#if constraints}}{{> constraintTableProperties constraints=constraints arrayItem=false}}|{{"\n"~}}{{/if}}
+{{~#if constraints}}{{> constraintTableProperties constraints=constraints arrayItem=false}}{{/if}}|{{"\n"~}}
 {{~#if arrayItem}}
 {{~#with arrayItem}}
 {{~#if type}}
